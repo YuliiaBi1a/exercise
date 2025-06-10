@@ -1,16 +1,21 @@
 package org.yulia.day1;
 
+import org.yulia.day2.BookCategory;
+import org.yulia.day2.LibraryItem;
+
 import java.time.Year;
 
-public class Book {
+public class Book implements LibraryItem {
     private final String title;
     private String author;
     private int year;
+    private BookCategory category;
 
-    public Book(String title, String author, int year) {
+    public Book(String title, String author, int year, BookCategory category) {
         this.title = title;
         this.author = author;
         this.year = year;
+        this.category = category;
     }
 
     public Book() {
@@ -29,10 +34,15 @@ public class Book {
         return title;
     }
 
+    public BookCategory getCategory() {
+        return category;
+    }
+
     public String getDetails(){
         return "The title is: " + getTitle()
                 + "\n author: " + getAuthor()
-                +"\n year: "+ getYear();
+                +"\n year: "+ getYear()
+                +"\n year: "+ getCategory();
     }
 
     public String getDetails(boolean withAge) {
@@ -46,6 +56,19 @@ public class Book {
     public int getAge(){
         int year = Year.now().getValue();
         return year - this.year;
+    }
+
+    @Override
+    public void checkOut() {
+    }
+
+    @Override
+    public void returnItem() {
+    }
+
+    @Override
+    public String getItemType() {
+        return "";
     }
 
     public static class BookUtils {
