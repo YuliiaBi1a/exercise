@@ -1,11 +1,13 @@
 package org.yulia.day1;
 
+import org.yulia.day2.BookCategory;
+
 public class EBook extends Book implements Readable {
 
     private double fileSize;
 
-    public EBook(String title, String author, int year, double fileSize) {
-        super(title, author, year);
+    public EBook(String title, String author, int year, double fileSize, BookCategory bookCategory) {
+        super(title, author, year, bookCategory);
         this.fileSize = fileSize;
     }
 

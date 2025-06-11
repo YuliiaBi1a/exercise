@@ -18,4 +18,5 @@ public class PrintedBook extends Book implements Readable{
     public void readSample() {
 
     }
+
 }
