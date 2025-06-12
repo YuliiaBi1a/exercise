@@ -41,18 +41,21 @@ public class EmployeesConsoleManager {
         employeesDAO.insertEmployee(ikran);
         employeesDAO.insertEmployee(jane);
         employeesDAO.insertEmployee(anotherJane);
+        employeesDAO.deleteEmployee(anotherJane.getNif());
 
         employeesDAO1.insertEmployee(john);
         employeesDAO1.insertEmployee(jane);
         employeesDAO1.insertEmployee(ikran);
         employeesDAO1.insertEmployee(jane);
         employeesDAO1.insertEmployee(anotherJane);
+        employeesDAO1.deleteEmployee(anotherJane.getNif());
 
         employeesDAO2.insertEmployee(john);
         employeesDAO2.insertEmployee(jane);
         employeesDAO2.insertEmployee(ikran);
         employeesDAO2.insertEmployee(jane);
         employeesDAO2.insertEmployee(anotherJane);
+        employeesDAO2.deleteEmployee(anotherJane.getNif());
     }
 
     private void printEmployees() {

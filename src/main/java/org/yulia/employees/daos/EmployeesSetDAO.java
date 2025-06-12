@@ -19,9 +19,15 @@ public class EmployeesSetDAO implements EmployeesDAO{
 
     @Override
     public Employee getEmployee(String nif) {
-        Iterator<Employee> empSetIterator = employeeSet.iterator();
-        while (empSetIterator.hasNext()) {
-            Employee currentEmp = empSetIterator.next();
+//        Iterator<Employee> empSetIterator = employeeSet.iterator();
+//        while (empSetIterator.hasNext()) {
+//            Employee currentEmp = empSetIterator.next();
+//            if (currentEmp.getNif().equalsIgnoreCase(nif)) {
+//                return currentEmp;
+//            }
+//        }
+//        return null;
+        for (Employee currentEmp : employeeSet) {
             if (currentEmp.getNif().equalsIgnoreCase(nif)) {
                 return currentEmp;
             }
@@ -33,5 +39,16 @@ public class EmployeesSetDAO implements EmployeesDAO{
     public Collection<Employee> getALlEmployees() {
         return employeeSet;
         //return new ArrayList<>(employeeSet);
+    }
+
+    @Override
+    public boolean deleteEmployee(String nif) {
+        for (Employee currentEmp : employeeSet) {
+            if (currentEmp.getNif().equalsIgnoreCase(nif)) {
+                employeeSet.remove(currentEmp);
+            }
+        }
+//        employeeSet.removeIf(currentEmp -> currentEmp.getNif().equalsIgnoreCase(nif));
+        return false;
     }
 }
