@@ -3,14 +3,16 @@ package org.yulia.day1;
 import org.yulia.day2.BookCategory;
 import org.yulia.day2.LibraryItem;
 
+import java.time.LocalDate;
 import java.time.Year;
 import java.util.Arrays;
 
-public class Book implements LibraryItem {
+public class Book implements LibraryItem<String> {
     private final String title;
     private String author;
     private int year;
     private BookCategory bookCategory;
+    private LocalDate loanDate;
 
     public Book(String title, String author, int year, BookCategory bookCategory) {
         this.title = title;
@@ -57,7 +59,7 @@ public class Book implements LibraryItem {
 
     @Override
     public void checkOut() {
-        System.out.println("Checkout successful");
+        this.loanDate = LocalDate.now();
     }
 
     @Override
@@ -68,6 +70,11 @@ public class Book implements LibraryItem {
     @Override
     public String getItemType() {
         return bookCategory.toString();
+    }
+
+    @Override
+    public LocalDate getLoanDate() {
+        return null;
     }
 
     public static class BookUtils {

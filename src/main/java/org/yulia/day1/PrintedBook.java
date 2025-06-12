@@ -1,5 +1,7 @@
 package org.yulia.day1;
 
+import java.time.LocalDate;
+
 public class PrintedBook extends Book implements Readable{
 
     private int pages;
@@ -19,4 +21,8 @@ public class PrintedBook extends Book implements Readable{
 
     }
 
+    @Override
+    public LocalDate getLoanDate() {
+        return null;
+    }
 }

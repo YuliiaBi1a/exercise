@@ -5,17 +5,21 @@ import org.yulia.day1.EBook;
 import org.yulia.day2.BookCategory;
 import org.yulia.day2.Librarian;
 import org.yulia.day2.LibraryItem;
+import org.yulia.day4.LoanManager;
 
-import java.io.IOException;
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hello, World!");
         testBook();
+        Deque<LibraryItem<?>> loanQueue = new ArrayDeque<>();
+
     }
+
+
 
     public static void testBook() {
         Book book1 = new Book();
@@ -50,5 +54,8 @@ public class Main {
         System.out.println(inner.averageBookAge(books));
         Book b2 = b1;
         b2.getDetails();
+
+        LoanManager loanManager = new LoanManager();
+
     }
 }
